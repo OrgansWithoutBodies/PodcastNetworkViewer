@@ -1,0 +1,23 @@
+load/unload as json
+STT
+auths
+can do call-in show things, include info if mentioned
+	"events"?
+		conferences - speaker/introducer/moderator
+		live shows
+		listener call-in	
+        "role" variable - defined per event/format? 
+Category/Tags
+scrape reviews/comments from catchers
+export to specific podcatcher formats
+
+positive/negative connections
+name changes over time
+	(multiple name/primary name?)
+non-human host?
+unnamed/nicknamed host
+hostship comes to an end	
+partial hostship
+hidden/deleted episodes
+differentiate between quoting & guesting
+response videos/casts

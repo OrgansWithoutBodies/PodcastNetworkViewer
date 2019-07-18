@@ -1,0 +1,20 @@
+#content{
+   width:50%;
+}
+.podlist{
+   display:grid;
+   grid-row-gap:3px;
+   grid-column-gap:1px;
+   grid-template-columns:33% 33% 33%;
+}
+.pod{
+   padding:5px;
+   border-radius:5px;
+   cursor:pointer;
+}
+.pod:nth-child(odd){
+   background-color:gray;
+}
+.pod:nth-child(even){
+   background-color:lightgray;
+}

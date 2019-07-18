@@ -1,0 +1,10 @@
+{%extends 'Net/base.html'%}
+
+{% block content %}
+<div class = "podlist">
+{% for p in pods %}
+<div class="pod">
+<img src = "{{p.thumb}}" height="40" width="40"><a href = "{{p.feedurl}}">{{p}}</a> - {{p.desc|truncatechars:100}}{% if p.pod %} - {{p.pod}}{%endif%}<p/>
+</div>
+{% endfor %}
+{% endblock %}
