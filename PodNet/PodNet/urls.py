@@ -18,5 +18,5 @@ from django.urls import path,include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('pods/',include('Net.urls')),
+    path('feeds/',include('Net.urls')),
 ]
