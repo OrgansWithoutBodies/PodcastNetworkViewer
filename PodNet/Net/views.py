@@ -15,8 +15,14 @@ class PodcastViewSet(viewsets.ModelViewSet):
 class PodcastFeedViewSet(viewsets.ModelViewSet):
     queryset = PodcastFeed.objects.all()
     serializer_class = PodcastFeedSerializer
+class FeedViewSet(viewsets.ModelViewSet):
+    queryset = Feed.objects.all()
+    serializer_class = FeedSerializer
+
 def pods(request): 
     #@TODO - deal with "the"
+    #@TODO - caching
     #@TODO - make faster/preloaded dealing w/ filters
-    context = {'pods':PodcastFeed.objects.all()}
+
+    context = {'pods':Feed.objects.filter(cont__isnull=False)}
     return TemplateResponse(request,'Net/pods.html',context) 

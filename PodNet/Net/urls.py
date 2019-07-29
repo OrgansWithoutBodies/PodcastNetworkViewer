@@ -4,6 +4,7 @@ from . import views
 
 router = DefaultRouter()
 router.register(r'pods',views.PodcastViewSet)
+router.register(r'feeds',views.FeedViewSet)
 router.register(r'podfeeds',views.PodcastFeedViewSet)
 urlpatterns = [
      path('api/',include(router.urls)),

@@ -12,3 +12,8 @@ class PodcastFeedSerializer(serializers.ModelSerializer):
        model = PodcastFeed
        fields = '__all__'
 
+class FeedSerializer(serializers.ModelSerializer):
+    class Meta:
+       model = Feed
+       fields = '__all__'
+

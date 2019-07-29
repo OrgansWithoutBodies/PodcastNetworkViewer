@@ -25,15 +25,15 @@ SECRET_KEY = 'w$_170n#jdyqse!2^y-1_$1x(w+9!t9e%w2&&c$^izc$x-=%ki'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
 
 INSTALLED_APPS = [
     'Net',
-
-    'rest_framework',
+ 
+   'rest_framework',
 
     'django.contrib.admin',
     'django.contrib.auth',
