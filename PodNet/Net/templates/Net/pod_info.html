@@ -1,0 +1,55 @@
+{%extends 'Net/base.html'%}
+
+{%block content%}
+<img src = "{{pod.lastRetrieved.thumb}}" width="100">
+	<span>{{pod}}</span>	
+
+<div class="eplist">
+	{% for ep in eps %}
+		<div class="ep{%if highlight_ep == ep.pk%}
+		highlit-ep
+		{%endif%}">
+			<div class="ep-ttl">{{ep.title}}</div><br>
+			<div class="ep-desc">
+			{{ep.description|safe}}
+			</div>
+			<div class="ep-pub">published: {{ep.pubDate}}</div>
+		</div>
+	{%endfor%}
+</div>
+
+<div>
+	Hosts:
+	{%for hst in hosts%}
+		<a href="{%url 'person' person_id=hst.person.pk%}">{{hst.person}}</a>
+	{%endfor%}
+</div>
+
+<div>
+	Guests:
+	{%for gst in guests%}
+		<a href="{%url 'person' person_id=gst.pk%}">{{gst}}</a>
+	{%endfor%}
+</div>
+<div>
+	Categories:
+	{% for tag in tags%}
+		<a href="{%url 'category' cat_id=tag.cat.id%}">{{tag.cat}}</a>	
+		<br>
+	{% endfor %}
+</div>
+{%endblock content%}
+{%block buttons%}
+	<div class="btn" onclick="getEps({{pod.pk}})">Get Episodes
+		<div class="btn-status" id="getepsstatus"></div>
+	</div>
+	<!-- @TODO - add choosers for cat/host -->
+	<!-- @TODO - different color themes for buttons -->
+	<div class="btn">Add Category<div class="btn-status" id="addcatstatus"></div></div>
+
+	<div class="btn">Add Host<div class="btn-status" id="addhoststatus"></div></div>
+
+	<div class="btn">Add Guest<div class="btn-status" id="addgueststatus"></div></div>
+
+	<div class="btn">Add Social Media<div class="btn-status" id="addsocstatus"></div></div>
+{%endblock buttons%}

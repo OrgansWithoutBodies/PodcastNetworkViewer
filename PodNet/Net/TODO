@@ -22,3 +22,4 @@ hidden/deleted episodes
 differentiate between quoting & guesting
 response videos/casts
 some sorta catcher for all links to see if they reference smth else already indexed
+Redis & Huey/Celery

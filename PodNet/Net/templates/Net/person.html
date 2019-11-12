@@ -1,0 +1,44 @@
+{%extends 'Net/base.html'%}
+{%block content%}
+<div class="bio">
+{{person}}
+	<div class="links"></div>
+</div>
+<div class="hostships">
+	Host of:
+	{%for hst in hosts%}
+		<a href="{%url 'pod_content' pod_id=hst.content.FEEDS.0.pk%}">
+			{{hst.content}}
+		</a>
+	{%endfor%}
+</div>
+
+<div class="guestships">
+	Guested on:
+	{%for gst in guests%}
+		<a href="{%url 'pod_content_highlight' pod_id=gst.ep.feed.pk highlight_ep_id=gst.ep.pk%}">
+			{{gst.ep.feed.cont}} - {{gst.ep.title}}
+		</a>
+	{%endfor%}
+</div>
+
+<div class="socs">
+	Social Media Profiles:
+	{%for soc in socs%}
+
+			<a href="{{soc.url}}">{{soc.site}}</a>
+
+	{%endfor%}
+</div>{%endblock content%}
+
+{%block buttons%}
+<div class="btn">Add Social Media<div class="btn-status" id="addsocstatus"></div></div>
+
+	<div class="btn" onclick="getEps({{pod.pk}})">Add Guestship
+		<div class="btn-status" id="getepsstatus"></div>
+	</div>
+
+	<div class="btn">Add Hostship<div class="btn-status" id="addhoststatus"></div></div>
+
+
+{%endblock buttons%}

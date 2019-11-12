@@ -1,0 +1,20 @@
+{{cat.name}}
+<div>
+	pods:
+		{%for c in cont%}
+			<a href="{%url 'pod_content' pod_id=c.cont.FEEDS.0.pk%}">
+				{{c.cont}}
+			</a>
+			<br>	
+		{%endfor%}
+</div>
+<div>
+	eps:
+		{%for e in eps%}
+			<a href="{%url 'pod_content_highlight' pod_id=e.ep.feed.pk highlight_ep_id=e.ep.pk%}">
+				{{e.ep}}
+			</a>
+
+			<br>
+		{%endfor%}
+</div>

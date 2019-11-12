@@ -1,11 +1,33 @@
 #content{
    width:50%;
 }
+.btn{
+   width:200px;
+   height:50px;
+   font-size:20px;
+   color:white;
+   font-weight: bold;
+   background-color: green;
+   display:grid;
+   /*margin:auto;*/
+   justify-content: center;
+   align-content: center;
+   border-radius:10px;
+   border:2px solid gray;
+   user-select: none;
+   cursor:pointer;
+}
+.btn:hover{
+   background-color: lightgreen;
+ }
+ .btn:active{
+   background-color:darkgreen;
+ }
 .podlist{
    display:grid;
    grid-row-gap:3px;
    grid-column-gap:1px;
-   grid-template-columns:33% 33% 33%;
+   grid-template-columns:1fr 1fr 1fr 1fr 1fr;
 }
 .pod{
    padding:5px;
@@ -17,4 +39,43 @@
 }
 .pod:nth-child(even){
    background-color:lightgray;
+}
+
+.eplist{
+   border:1px solid black;
+   border-radius: 20px;
+   height:800px;
+   overflow-y: scroll;
+}
+
+.ep{
+   padding:10px;
+}
+.ep:nth-child(odd){
+   background-color:gray;
+}
+.ep:nth-child(even){
+   background-color:lightgray;
+}
+.ep:nth-child(odd)>.ep-pub{
+   color:lightgray;
+}
+.ep:nth-child(even)>.ep-pub{
+   color:gray;
+}
+.ep-desc{
+   color:rgb(20,20,20);
+}
+.ep-ttl{
+   border-bottom: 2px solid black;
+   font-size:20px;
+}
+.ep-pub{
+   padding:6px;
+   font-size:14px;
+   font-weight: bolder;
+
+}
+.highlit-ep{
+   border: 13px solid yellow !important;
 }

@@ -1,0 +1,14 @@
+<head><script type="text/javascript" src="https://cdn.pydata.org/bokeh/release/bokeh-1.0.4.min.js"></script></head>
+{{nv|safe}}
+{%for p,c in CP.items%}
+{{p}}:{{c}}<br>
+{%endfor%}
+<p>
+{%for c,p in PC.items%}
+{{c}}:{{p.0}} - {{p.1}}<br>
+{%endfor%}
+<p>
+{%for p,g in HG.items%}
+{{p}} - {{g.0}} & {{g.1}}<br>
+{%endfor%}
+

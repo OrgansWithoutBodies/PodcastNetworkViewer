@@ -7,3 +7,7 @@ sections:
 		loop/transition music/etc
 		fade time
     method of controlling output frequency
+wrapper for segment of episode to include in lineup
+can specify transitions
+timeline of segments
+config what to do if empty
