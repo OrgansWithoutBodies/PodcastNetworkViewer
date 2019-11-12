@@ -6,15 +6,33 @@
 	<link rel="stylesheet" href="{% static 'style.css'%}">
 	<script type="text/javascript" src="{%static 'buttons.js'%}"></script>
 	<title></title>
+	{%block extra_js%}
+	{%endblock%}
 </head>
 <body>
 <div id="content">
+
+
+{%block head%}
+Under construction!! :^)<br>
+<a href="{%url 'base'%}">
+	List
+</a></br>
+<a href="{%url 'network'%}">
+	Network
+</a>
+</p>
+{%endblock%}
 
 {%block buttons%}
 {%endblock buttons%}
 
 {% block content %}
 {% endblock %}
+
+{%block foot%}
+!! This is an indexer of leftist content. Inclusion on this site should not be interpreted as an endorsement !! 
+{%endblock%}
 </div>
 </body>
 </html>

@@ -53,7 +53,7 @@ def pods(request):
     #@TODO - caching
     #@TODO - make faster/preloaded dealing w/ filters
 
-    context = {'pods':Feed.objects.filter(cont__isnull=False)}
+    context = {'pods':Feed.objects.filter(cont__isnull=False).order_by('cont__name')}
     return TemplateResponse(request,'Net/pods.html',context) 
 def category(request,cat_id=None):
 	cat=Category.objects.get(pk=cat_id)
@@ -63,7 +63,7 @@ def category(request,cat_id=None):
 	return TemplateResponse(request,'Net/category.html',context)
 def content(request,pod_id,highlight_ep_id=None):
 	if highlight_ep_id is not None:
-		
+
 		highlight_ep_id	= int(highlight_ep_id)
 	pod=Feed.objects.get(pk=pod_id)
 	eps=Episode.objects.filter(feed=pod)

@@ -53,7 +53,7 @@ def is_url_valid(feedurl):
 
 def parse_pod_from_xml(channel):
 	#sees if there's a pod matching this name, if so set it as the referrent
-	title = channel.find('title').text
+	title = channel.find('title').text.strip()
 	# print(title.text)
 	matched=models.Podcast.objects.filter(name__iexact=title)
 	if len(matched)==0:

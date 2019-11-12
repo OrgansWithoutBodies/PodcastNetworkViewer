@@ -1,14 +1,29 @@
+{%extends 'Net/base.html'%}
+{%block extra_js%}
 <head><script type="text/javascript" src="https://cdn.pydata.org/bokeh/release/bokeh-1.0.4.min.js"></script></head>
-{{nv|safe}}
-{%for p,c in CP.items%}
-{{p}}:{{c}}<br>
-{%endfor%}
-<p>
-{%for c,p in PC.items%}
-{{c}}:{{p.0}} - {{p.1}}<br>
-{%endfor%}
-<p>
-{%for p,g in HG.items%}
-{{p}} - {{g.0}} & {{g.1}}<br>
-{%endfor%}
+{%endblock%}
+{% block content %}<br>
+	pods are shown if they have one host/guest associated w them<br>
+	rn pods share an (undirected, unweighted) edge if:
+	<ul>
+	<li>	they share a host
+	
+		<li>the host of one has guested on another
+	</ul>
 
+	{{nv|safe}}
+	To activate scroll zooming, click the third gray button from the top on the right-hand-side
+	<p>
+	{%for p,c in CP.items%}
+	{{p}}:{{c}}<br>
+	{%endfor%}
+	<p>
+	{%for c,p in PC.items%}
+	{{c}}:{{p.0}} - {{p.1}}<br>
+	{%endfor%}
+	<p>
+	{%for p,g in HG.items%}
+	{{p}} - {{g.0}} & {{g.1}}<br>
+	{%endfor%}
+
+{%endblock%}

@@ -14,7 +14,7 @@ router.register(r'tagged',views.TaggedContentViewSet)
 
 urlpatterns = [
      path('api/',include(router.urls)),
-     path('',views.pods),
+     path('',views.pods,name='base'),
      path('content/<pod_id>',views.content,name="pod_content"),
      	path('content/<pod_id>/&highlight=<highlight_ep_id>',views.content,name="pod_content_highlight"),
      path('category/<cat_id>',views.category,name="category"),

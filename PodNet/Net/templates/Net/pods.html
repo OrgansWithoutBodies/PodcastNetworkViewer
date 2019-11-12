@@ -5,11 +5,11 @@
 <div class = "podlist">
 {% for p in pods %}
 	<div class="pod">
-		<img src = "{{p.lastRetrieved.thumb}}" height="40" width="40"><a href = "{{p.feedurl}}">{{p}}</a> - {{p.lastRetrieved.desc|safe|truncatechars:150}}<p/>
+		<img src = "{{p.lastRetrieved.thumb}}" height="40" width="40">{{p}} (<a href = "{{p.feedurl}}">RSS</a>)</p>
+		{{p.lastRetrieved.desc|safe|truncatechars:150}}<p/>
 		<a class='eplink' href='{% url "pod_content" pod_id=p.pk%}'>EPISODES</a>	
 	</div>
 {% endfor %}
 </div>
 
-!! This is an indexer of leftist content. Inclusion on this site should not be interpreted as an endorsement !! 
 {% endblock %}
